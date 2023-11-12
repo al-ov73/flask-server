@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example application</title>
+  </head>
+  <body>
+  <a href="/users">ВЕРНУТЬСЯ К БАЗЕ ПОЛЬЗОВАТЕЛЕЙ</a>
+<form action="/users/new-user" method="post">
+  <div>
+    <label>
+      nickname
+      <input type="nickname" name="nickname" value="{{ user.nickname }}">
+    </label>
+    {% if errors['nickname'] %}
+    <div>{{ errors['nickname'] }}</div>
+    {% endif %}
+  </div>
+  <div>
+    <label>
+      email
+      <input type="email" required name="email" value="{{ user.email }}">
+    </label>
+    {% if errors['email'] %}
+    <div>{{ errors['email'] }}</div>
+    {% endif %}
+  </div>
+  <input type="submit" value="Sign Up">
+</form>
+
+  </body>
+</html>

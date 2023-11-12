@@ -1,0 +1,23 @@
+<a href="/users">ВЕРНУТЬСЯ К БАЗЕ ПОЛЬЗОВАТЕЛЕЙ</a>
+<div>
+  <a href="{{ url_for('edit_user', id=id) }}">РЕДАКТИРОВАТЬ ПОЛЬЗОВАТЕЛЯ</a>
+</div>
+<div>
+    <table>
+      <tr>
+        <td>
+          id = {{ id }}
+        </td>
+      </tr>
+        <tr>
+        <td>
+          nickname = {{ name }}
+        </td>
+      </tr>
+        <tr>
+        <td>
+          mail = {{ email }}
+        </td>
+      </tr>
+    </table>
+</div>

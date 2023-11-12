@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Users database</title>
+  </head>
+  <body>
+  <a href="/users/new">РЕГИСТРАЦИЯ НОВОГО ПОЛЬЗОВАТЕЛЯ</a>
+  {% if messages %}
+  <ul class=flashes>
+  {% for category, message in messages %}
+    <li class="{{ category }}">{{ message }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
+<form action="/users" method="get">
+  <input type="search" name="term" value="{{ search }}" />
+  <input type="submit" value="Search" />
+</form>
+    <table>
+      {% for id, userdata in users.items() %}
+      <tr>
+        <td>
+          <a href="/users/{{ id }}">{{ userdata[0] }}</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
